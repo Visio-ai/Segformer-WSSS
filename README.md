@@ -527,15 +527,15 @@ uv run python train.py --config configs/default.json --dataset-root datasets/Foo
 
 ## Hardware used for experiments
 
-The main experiments and end-to-end tests for this repository were run on a Linux workstation similar to the one hosting this repo, with the following characteristics:
+The main experiments and end-to-end tests for this repository were run on the same workstation that hosts this repo, with the following specifications:
 
 - **Operating system**: Linux (kernel `6.14.0-37-generic`).
 - **Python**: 3.10+ (matching the `>=3.10` requirement in `pyproject.toml`).
-- **GPU**: Single NVIDIA GPU with CUDA support (tested with a 20–24 GB VRAM class card).
-- **CPU**: Multi-core desktop-class CPU (≥ 8 physical cores).
-- **RAM**: At least 32 GB system memory.
+- **GPU**: NVIDIA GeForce RTX 5090 with **32 GB VRAM**.
+- **CPU**: Intel Core i7‑14700KF.
+- **RAM**: 32 GB system memory.
 
-You can train smaller configurations (e.g. the mini dataset) on more modest hardware, but for full-resolution training on larger datasets like FoodSeg103 or the private VSS dataset, a CUDA-capable GPU with ≥ 20 GB VRAM and ample RAM is strongly recommended.
+You can train smaller configurations (e.g. the mini dataset) on more modest hardware, but for full-resolution training on larger datasets like FoodSeg103 or the private VSS dataset, having a modern CUDA-capable GPU with ≥ 20 GB VRAM and at least 32 GB system RAM is strongly recommended.
 
 ---
 
