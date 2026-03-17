@@ -1,0 +1,11 @@
+creds/
+docs/
+logs/
+mds/
+mlflow/
+*.pyc
+profiler_logs/
+plans/
+datasets/FoodSeg103_converted
+datasets/WeakSupervisionSegmentation:v1
+__pycache__/
