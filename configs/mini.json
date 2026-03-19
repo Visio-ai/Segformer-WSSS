@@ -1,0 +1,63 @@
+{
+    "debug": false,
+    "run_name": "wsss-WeakSupervisionSegmentation-mini",
+    "experiment_name": "WeakSupervisionSegmentation-mini",
+    "online": false,
+    "seed": 42,
+    "shared_backbone": true,
+    "lr": 0.02,
+    "weight_decay": 0.0006197015748809143,
+    "batch_size": 12,
+    "accumulate_grad_batches": 1,
+    "epochs": 20,
+    "image_size": 448,
+    "dataset_root": "datasets/WeakSupervisionSegmentation-mini:v1",
+    "use_balanced_sampler": true,
+    "sampler": {
+        "num_samples": 3000
+    },
+    "pretrain_checkpoint_path": null,
+    "checkpoint_dir": "checkpoints",
+    "backbone_lr": 4.149795789891592e-05,
+    "backbone_weight_decay": 4.325207525386527e-05,
+    "head_lr": 0.0026443593078398657,
+    "head_weight_decay": 1.6599837974449204e-05,
+    "stage_transition_pct": 0.3,
+    "cutmix": {
+        "probability_stage0": 0.1,
+        "probability_stage2": 0.5
+    },
+    "tta": {
+        "weights": [0.4, 0.15, 0.15, 0.1, 0.1, 0.05, 0.05]
+    },
+    "lambda_cls": 20.0,
+    "lambda_seg": 10.0,
+    "background_weight": 0.1,
+    "foreground_weight": 1.0,
+    "tau_l": 0.4,
+    "tauh0": 0.7,
+    "tauhT": 0.55,
+    "eval_last_epoch_only": true,
+    "num_workers": 4,
+    "persistent_workers": true,
+    "backbone_model": "nvidia/mit-b0",
+    "domain_crop": {
+        "enabled": true,
+        "min_foreground_classes": 4,
+        "min_foreground_classes_centro": 7,
+        "crop_vs_obscure": [0.7, 0.3],
+        "revert_to_normal_prob": 0.7,
+        "region_probabilities": {
+            "normal": 0.10,
+            "cima": 0.30,
+            "baixo": 0.15,
+            "centro": 0.15,
+            "cima2": 0.15,
+            "baixo2": 0.15
+        },
+        "spatial_groups": {
+            "top": [0, 2, 6, 7, 9, 12, 15, 10],
+            "bottom": [3, 4, 5, 8, 10, 11, 13, 14]
+        }
+    }
+}

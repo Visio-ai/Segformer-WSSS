@@ -1,0 +1,17 @@
+[project]
+name = "segformer-wsss"
+version = "0.1.0"
+description = "Weakly supervised semantic segmentation with a dual-student SegFormer pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets>=4.8.2",
+    "huggingface-hub>=1.7.1",
+    "lightning>=2.6.1",
+    "mlflow>=3.10.1",
+    "opencv-python>=4.13.0.92",
+    "pytorch-lightning>=2.6.1",
+    "torch>=2.10.0",
+    "torchvision>=0.25.0",
+    "transformers>=5.3.0",
+]

@@ -1,0 +1,43 @@
+{
+  "mode": "single",
+  "train_count": 20,
+  "val_count": 10,
+  "class_distribution": {
+    "train": {
+      "Picles": 1,
+      "Pao": 19,
+      "Cebola": 10,
+      "Queijo": 18,
+      "Carne": 15,
+      "Cheddar": 6,
+      "Azeitona": 7,
+      "Pimentao": 7,
+      "Molho": 7,
+      "Alface": 11,
+      "Mao_Pessoa": 7,
+      "Tomate": 12,
+      "Pepino": 7,
+      "Cream-cheese": 3,
+      "Processados": 3,
+      "Bacon": 1
+    },
+    "val": {
+      "Picles": 1,
+      "Pao": 10,
+      "Cebola": 5,
+      "Queijo": 10,
+      "Carne": 7,
+      "Cheddar": 4,
+      "Azeitona": 6,
+      "Pimentao": 3,
+      "Molho": 3,
+      "Alface": 7,
+      "Tomate": 6,
+      "Pepino": 2,
+      "Mao_Pessoa": 3,
+      "Processados": 2,
+      "Bacon": 1,
+      "Cream-cheese": 2
+    }
+  }
+}

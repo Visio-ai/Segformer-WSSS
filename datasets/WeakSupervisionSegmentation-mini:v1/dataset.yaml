@@ -1,0 +1,44 @@
+anonymized: true
+class_names:
+  0: background
+  1: Picles
+  2: Pao
+  3: Cebola
+  4: Queijo
+  5: Carne
+  6: Cheddar
+  7: Azeitona
+  8: Pimentao
+  9: Molho
+  10: Alface
+  11: Mao_Pessoa
+  12: Cream-cheese
+  13: Tomate
+  14: Processados
+  15: Bacon
+  16: Pepino
+description: Mini subset (30 imgs, anonymized) for weakly supervised semantic segmentation
+image_channels: 3
+image_format: jpg
+label_format:
+  classification:
+    file_format: json
+    length: 16
+    type: multi_hot
+  segmentation:
+    file_format: txt
+    mask_cache: png
+    num_classes_with_bg: 17
+    type: yolo_polygon
+name: Weak Supervision Segmentation (Mini)
+num_classes: 17
+num_foreground_classes: 16
+stats:
+  total_images: 30
+  train_images: 20
+  val_images: 10
+supervision:
+  train: image_level
+  val: pixel_level
+task: weakly_supervised_semantic_segmentation
+version: 1.0-mini
