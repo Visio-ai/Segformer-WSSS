@@ -11,7 +11,7 @@ The method combines:
 - pseudo-supervision from CAMs and TTA;
 - a unified local dataset format.
 
-## TL;DR (Quick start)
+## Quick start
 
 ```bash
 uv sync
@@ -25,47 +25,6 @@ uv run python scripts/convert_foodseg103.py --output-dir datasets/FoodSeg103_con
 uv run python train.py --config configs/default.json --dataset-root datasets/FoodSeg103_converted
 ```
 
-## Highlights
-
-- Reproducible training pipeline with PyTorch Lightning.
-- Local dataset spec shared by mini and converted public datasets.
-- Support for weak supervision from image-level labels and CAM-based pseudo-masks.
-- End-to-end training entrypoint: `train.py`.
-
-## Repository data policy
-
-Some review comments asked whether training/validation-related folders should be versioned. For this repository:
-
-- `datasets/WeakSupervisionSegmentation-mini:v1` is intentionally versioned to provide a ready-to-run reproducibility sample and is publicly shareable with authorization from the dataset owner.
-- `VSS_stats/` is intentionally versioned because it contains only aggregate statistics/artifacts from the private VSS dataset (no private raw images or labels).
-- Large or private datasets are not redistributed in this repo.
-
-For a future monorepo migration, the recommended direction is to keep only minimal reproducibility assets in-repo and move larger datasets/artifacts to external storage with bootstrap scripts.
-
-## Project structure
-
-Current layout (incremental organization, no breaking refactor):
-
-```text
-.
-├── train.py                        # main training entrypoint
-├── tta.py                          # inference/TTA utilities
-├── model.py                        # dual-student LightningModule
-├── backbone.py                     # SegFormer multitask wrapper
-├── dataset.py                      # dataset format + dataset classes
-├── datamodule.py                   # Lightning DataModule
-├── augmentation.py                 # CutMix/MixUp for multi-label WSSS
-├── metrics.py                      # mIoU metric
-├── callbacks.py                    # training callbacks
-├── helpers/                        # transforms, samplers, CAM helpers, metrics
-├── scripts/
-│   └── convert_foodseg103.py       # converter for public FoodSeg103
-├── configs/                        # experiment configs
-├── datasets/                       # sample/public-format datasets
-└── VSS_stats/                      # aggregate stats for private VSS dataset
-```
-
-Monorepo roadmap (planned, not applied in this PR): migrate core modules to `src/segformer_wsss/` and keep runnable entrypoints in `scripts/`.
 
 ## Setup
 
@@ -152,13 +111,12 @@ The main experiments and end-to-end tests for this repository were run on the sa
 - **CPU**: Intel Core i7‑14700KF.
 - **RAM**: 32 GB system memory.
 
-You can train smaller configurations (e.g. the mini dataset) on more modest hardware, but for full-resolution training on larger datasets like FoodSeg103 or the private VSS dataset, having a modern CUDA-capable GPU with ≥ 20 GB VRAM and at least 32 GB system RAM is strongly recommended.
 
 ## Limitations
 
 - Main dataset used in the paper is private.
 - Included mini dataset is for reproducibility checks, not for benchmarking final performance.
-- Current repository layout is functional but still transitional pending monorepo alignment.
+- Repository layout may still change as monorepo alignment progresses.
 
 ## Citation
 
