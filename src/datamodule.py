@@ -9,9 +9,9 @@ import torch
 import numpy as np
 from torch.utils.data import DataLoader, RandomSampler
 
-from dataset import DatasetConfig, WSSTrainDataset, WSSValDataset
-from helpers.transforms import MaskAwareTransforms, MaskAwareValidationTransforms
-from helpers.sampler import MultiLabelBalancedSampler
+from src.dataset import DatasetConfig, WSSTrainDataset, WSSValDataset
+from src.helpers.transforms import MaskAwareTransforms, MaskAwareValidationTransforms
+from src.helpers.sampler import MultiLabelBalancedSampler
 
 
 class WSSDataModule(pl.LightningDataModule):

@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 from transformers import SegformerForImageClassification, SegformerForSemanticSegmentation
 
-from helpers import TransformerGradCAM
+from src.helpers import TransformerGradCAM
 
 
 class SegformerMultiTask(nn.Module):

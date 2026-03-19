@@ -1,8 +1,8 @@
 {
-    "debug": false,
+    "debug": true,
     "run_name": "wsss-FoodSeg103",
     "experiment_name": "FoodSeg103",
-    "online": true,
+    "online": false,
     "seed": 42,
     "shared_backbone": true,
     "lr": 0.02,

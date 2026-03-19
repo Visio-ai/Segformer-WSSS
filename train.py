@@ -10,10 +10,10 @@ import mlflow
 import pytorch_lightning as pl
 import torch
 
-from callbacks import MemoryLogCallback, SaveEveryEpochCallback
-from datamodule import WSSDataModule
-from dataset import DatasetConfig
-from model import WSSSegmentationModel
+from src.callbacks import MemoryLogCallback, SaveEveryEpochCallback
+from src.datamodule import WSSDataModule
+from src.dataset import DatasetConfig
+from src.model import WSSSegmentationModel
 
 config = None
 
@@ -130,11 +130,11 @@ def main():
     debug = config.get("debug", False)
     enable_profiling = config.get("enable_profiling", False)
     profiler_dir = config.get("profiler_dir", "profiler_logs/wsss")
+    profiler = None
     if enable_profiling:
         callbacks_list.append(
             MemoryLogCallback(log_path=os.path.join(profiler_dir, "memory_log.txt"))
         )
-        profiler = None
     if enable_profiling:
         # Schedule to cover validation at epoch 4: with limit_*_batches=2, ~4 steps/epoch; wait=14, warmup=2, active=6
         profiler = pl.profilers.PyTorchProfiler(

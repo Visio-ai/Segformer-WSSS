@@ -14,13 +14,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.optim import AdamW
 
-from augmentation import cutmix_with_masks
-from backbone import SegformerMultiTask
-from helpers.mask_loss_utils import apply_ignore_index_to_segmentation
-from helpers.metrics.classification_v2 import MultilabelMetrics
-from last_losses import discrepancy_loss
-from metrics import MiouMetric
-from tta import generate_hard_pseudo_labels_tta as generate_hard_pseudo_labels_tta_fn
+from src.augmentation import cutmix_with_masks
+from src.backbone import SegformerMultiTask
+from src.helpers.mask_loss_utils import apply_ignore_index_to_segmentation
+from src.helpers.metrics.classification_v2 import MultilabelMetrics
+from src.last_losses import discrepancy_loss
+from src.metrics import MiouMetric
+from src.tta import generate_hard_pseudo_labels_tta as generate_hard_pseudo_labels_tta_fn
 
 ENABLE_TIMING_PRINTS = os.getenv("ENABLE_TIMING_PRINTS", "false").lower() == "true"
 

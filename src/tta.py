@@ -5,7 +5,7 @@ Uma única função unificada (param detach para compatibilidade com ambos os us
 
 import torch
 import torch.nn.functional as F
-from helpers.cam_processing import balance_class_presence
+from src.helpers.cam_processing import balance_class_presence
 
 
 def generate_hard_pseudo_labels_tta(

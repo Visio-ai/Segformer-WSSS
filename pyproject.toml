@@ -1,7 +1,7 @@
 [project]
 name = "segformer-wsss"
 version = "0.1.0"
-description = "A wsss implementation with dual student and segformer"
+description = "Weakly supervised semantic segmentation with a dual-student SegFormer pipeline"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [

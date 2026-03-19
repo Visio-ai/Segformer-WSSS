@@ -2,7 +2,7 @@
     "debug": false,
     "run_name": "wsss-WeakSupervisionSegmentation-mini",
     "experiment_name": "WeakSupervisionSegmentation-mini",
-    "online": true,
+    "online": false,
     "seed": 42,
     "shared_backbone": true,
     "lr": 0.02,

@@ -22,7 +22,7 @@ try:
 except ImportError:
     cv2 = None
 
-from helpers.transforms import MaskAwareTransforms, MaskAwareValidationTransforms, DomainCropAugmentation
+from src.helpers.transforms import MaskAwareTransforms, MaskAwareValidationTransforms, DomainCropAugmentation
 
 
 # ---------------------------------------------------------------------------
