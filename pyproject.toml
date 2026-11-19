@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Matheus Ramos de Carvalho" }
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "datasets>=4.8.2",
     "huggingface-hub>=1.7.1",
